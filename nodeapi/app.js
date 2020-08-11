@@ -6,19 +6,21 @@ const morgan = require('morgan');
 // const postRoutes = require('./routes/posts');
 // const getPosts = postRoutes.getPosts;
 const { getPosts } = require('./routes/posts');
+const postRoutes = require("./routes/posts")
 
 //middleware
 app.use(morgan("dev"));
 
-const myOwnMiddleware = (req, res, next) => {
-    console.log("I'm a middleware!!");
-    next();
-}
+// const myOwnMiddleware = (req, res, next) => {
+//     console.log("I'm a middleware!!");
+//     next();
+// }
+//
+// app.use(myOwnMiddleware);
+//
+// app.get('/', getPosts);
 
-app.use(myOwnMiddleware);
-
-app.get('/', getPosts);
-
+app.use('/',postRoutes);
 
 const port = 3000;
 app.listen(port, () => {
