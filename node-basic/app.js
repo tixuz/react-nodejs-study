@@ -1,9 +1,6 @@
-console.log("Hello from node-js");
+// console.log("Hello from node-js");
 
-function sum(a, b) {
-    return a+b;
-}
-
+const helpers = require('./helpers');
 //var let const
-const total = sum(10,200);
+const total = helpers.sum(10,200);
 console.log("TOTAL: ", total);
