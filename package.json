@@ -1,0 +1,22 @@
+{
+  "name": "ec6",
+  "version": "1.0.0",
+  "description": "Learning NodeJS - Higly recommendnom",
+  "main": "./node-basic/app.js",
+  "scripts": {
+    "dev": "nodemon ./node-basic/app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tixuz/react-nodejs-study.git"
+  },
+  "author": "Hindol Madraimov",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tixuz/react-nodejs-study/issues"
+  },
+  "homepage": "https://github.com/tixuz/react-nodejs-study#readme",
+  "dependencies": {
+    "nodemon": "^2.0.4"
+  }
+}
