@@ -1,6 +1,6 @@
 # react-nodejs-study
 
-#Higly recommend
+## Higly recommend
 
 https://www.udemy.com/course/react-tutorial/
 
