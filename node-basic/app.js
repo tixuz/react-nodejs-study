@@ -36,11 +36,17 @@ const fileName = "target.txt";
 //     return console.log(`File changed`);
 // })
 
-fs.readFile(fileName, (err, data) => {
-    if(err){
-        console.log(err);
-    }
-    return console.log(data.toString());
-})
+// asynchronous
+// fs.readFile(fileName, (err, data) => {
+//     if(err){
+//         console.log(err);
+//     }
+//     return console.log(data.toString());
+// })
+
+// synchronous
+const data = fs.readFileSync(fileName);
+console.log(data.toString());
+
 
 console.log("Node js asynch programming ... ?")
