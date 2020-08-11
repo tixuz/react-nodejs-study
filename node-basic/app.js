@@ -30,8 +30,17 @@
 const fs = require('fs');
 const fileName = "target.txt";
 
-// fs.watch(fileName, () => {
-// fs.watch does not work properly fs.watch() doesn't notify content changes starting v10.16.0 #28882
-fs.watchFile(fileName, () => {
-    return console.log(`File changed`);
+// // fs.watch(fileName, () => {
+// // fs.watch does not work properly fs.watch() doesn't notify content changes starting v10.16.0 #28882
+// fs.watchFile(fileName, () => {
+//     return console.log(`File changed`);
+// })
+
+fs.readFile(fileName, (err, data) => {
+    if(err){
+        console.log(err);
+    }
+    return console.log(data.toString());
 })
+
+console.log("Node js asynch programming ... ?")
