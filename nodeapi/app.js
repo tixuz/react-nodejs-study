@@ -1,6 +1,7 @@
 const express = require('express');
 const app = express();
 const morgan = require('morgan');
+const bodyParser = require('body-parser')
 
 // import mongoose
 const mongoose = require('mongoose');
@@ -22,25 +23,18 @@ mongoose.connection.on('error', err => {
 });
 
 //routes
-// const postRoutes = require('./routes/posts');
-// const getPosts = postRoutes.getPosts;
-// const { getPosts } = require('./routes/posts');
-
 const postRoutes = require("./routes/posts")
 
 //middleware
+app.use(bodyParser.json());
+//this is to parse the post into json
+
 app.use(morgan("dev"));
+//this is to show get/post status
 
-// const myOwnMiddleware = (req, res, next) => {
-//     console.log("I'm a middleware!!");
-//     next();
-// }
-//
-// app.use(myOwnMiddleware);
-//
-// app.get('/', getPosts);
+app.use('/', postRoutes);
+//this is for routes
 
-app.use('/',postRoutes);
 
 const port =  process.env.PORT; //.env
 app.listen(port, () => {
