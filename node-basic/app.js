@@ -17,12 +17,21 @@
 // const total = sum(10,200);
 // console.log("TOTAL: ", total);
 
+// using express server
+// const express = require('express')
+// const app = express()
+//
+// app.get('/', function (req, res) {
+//     res.send('Hey wussap with node js')
+// })
+//
+// app.listen(3000)
 
-const express = require('express')
-const app = express()
+const fs = require('fs');
+const fileName = "target.txt";
 
-app.get('/', function (req, res) {
-    res.send('Hey wussap with node js')
+// fs.watch(fileName, () => {
+// fs.watch does not work properly fs.watch() doesn't notify content changes starting v10.16.0 #28882
+fs.watchFile(fileName, () => {
+    return console.log(`File changed`);
 })
-
-app.listen(3000)
